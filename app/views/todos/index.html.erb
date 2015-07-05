@@ -1,0 +1,15 @@
+<titl> ToDo App</titl>
+<h1>Todos List</h1>
+<p>All you todos here</p>
+<%=	form_tag("/todos/add",:method => "post") do %>
+    <%=	text_area_tag(:todo_text)  %>
+    <%=	submit_tag("Add todo") %>
+
+
+    <% end %>
+<% @todo_items.each do |t| %>
+    <li> <%= t.todo_item %> </li>
+    <%	end  %>
+
+
+<a href="delete">Delete last todo</a>
